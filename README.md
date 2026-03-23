@@ -10,7 +10,7 @@ Key takeaways:
 - Bitcoin presents extremely high daily volatility and deep drawdowns.
 - Trend-following strategies act mainly as risk control mechanisms rather than return maximizers.
 - Transaction costs significantly affect short-term strategies.
-- Correlation analysis shows varying relationship between Bitcoin and the S&P 500.
+- The correlation between Bitcoin and the S&P 500 is dynamic, varying significantly across different market regimes.
 
 > This is not a trading bot. The goal is to study how quantitative analysis can be used to evaluate behavior and risk in volatile assets.
 
@@ -22,6 +22,7 @@ Key takeaways:
 - Does Bitcoin behave independently from traditional markets?
 - Can trend-following rules reduce exposure during bear markets?
 - Can risk management techniques reduce drawdowns without eliminating upside?
+- How does the BTC/S&P 500 correlation evolve over time?
 
 ---
 
@@ -63,6 +64,10 @@ Signals:
 - Exposure reduction during downtrends
 - Drawdown mitigation
 
+### Rolling Correlation Analysis
+- 30, 90 and 180-day rolling Pearson correlation between BTC and S&P 500
+- Identifies regime shifts in diversification potential
+
 ---
 
 ## Results
@@ -96,6 +101,7 @@ Applying a trailing stop-loss reduces major drawdowns while maintaining particip
 - Buy-and-hold offers higher long-term return but with severe drawdowns.
 - Systematic strategies reduce time spent in bear markets.
 - Trailing stop-loss improves downside protection.
+- BTC/S&P 500 correlation is highly dynamic: it ranges from strongly positive during broad market sell-offs to near-zero or negative, making Bitcoin an unreliable diversifier.
 
 ---
 
@@ -105,8 +111,8 @@ Applying a trailing stop-loss reduces major drawdowns while maintaining particip
 - Data cleaning and preprocessing (Pandas)
 - Time series analysis
 - Backtesting methodology
-- Risk metrics calculation (volatility, drawdown, Sharpe ratio)
-- Correlation analysis (BTC vs S&P 500)
+- Risk metrics calculation (volatility, drawdown, Sharpe ratio, Sortino ratio, Calmar ratio)
+- Rolling correlation analysis (BTC vs S&P 500)
 - Financial data visualization (Matplotlib / Seaborn)
 
 ---
@@ -118,6 +124,7 @@ Applying a trailing stop-loss reduces major drawdowns while maintaining particip
 - numpy
 - matplotlib / seaborn
 - yfinance
+- scipy
 
 ---
 
@@ -132,7 +139,7 @@ pip install -r requirements.txt
 2. Open the notebook
 
 ```bash
-jupyter notebook notebook/bitcoin_market_analysis.ipynb
+jupyter notebook bitcoin_market_analysis.ipynb
 ```
 
 The notebook downloads the data automatically.
